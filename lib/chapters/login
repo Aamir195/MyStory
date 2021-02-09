@@ -1,0 +1,73 @@
+import 'package:flutter/material.dart';
+import 'package:practise/bgimage.dart';
+import 'package:practise/util/Constants.dart';
+
+class LoginPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            title: Text(
+          "LoginPage",
+        )),
+        body: Stack(
+          children: [
+            BgImage(),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: SingleChildScrollView(
+                  child: Card(
+                    child: Column(
+                      children: [
+                        Form(
+                            child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: "Enter Username",
+                                  labelText: "UserName",
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: TextFormField(
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  hintText: "Enter Password",
+                                  labelText: "Password",
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
+                        RaisedButton(
+                          onPressed: () {
+                            Constants.pref.setBool("LoggedIn ", true);
+                            Navigator.pushReplacementNamed(context, "/home");
+                            // Navigator.pushNamed(context, "/home");
+                          },
+                          child: Text(
+                            "Sign In",
+                            style: TextStyle(
+                              fontSize: 17,
+                            ),
+                          ),
+                          color: Colors.amber,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ));
+  }
+}

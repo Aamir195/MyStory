@@ -1,0 +1,24 @@
+body: Container(
+        child: Material(
+            color: Vx.yellow100,
+            child: "I am doing just a practise"
+                .text
+                .size(20)
+                .underline
+                .capitalize
+                .extraBold
+                .red300
+                .italic
+                .fontFamily("Arabic")
+                .make()
+                .box
+                .purple100
+                .p16
+                .square(300)
+                .roundedLg
+                .alignCenter
+                .shadow5xl
+                .neumorphic(
+                    color: Vx.yellow100, elevation: 20, curve: VxCurve.flat)
+                .makeCentered()),
+      ),
