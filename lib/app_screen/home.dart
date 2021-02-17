@@ -1,6 +1,7 @@
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
-// import 'package:foldable_sidebar/foldable_sidebar.dart';
+// import 'package:dynamic_theme/dynamic_theme.dart';
 
 enum FSBStatus {
   FSB_OPEN,
@@ -13,6 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -60,18 +62,17 @@ class _HomePageState extends State<HomePage> {
                         "My Story".text.bold.size(15).make(),
                       ],
                     ),
-                    // decoration: BoxDecoration(color: Colors.purpleAccent)
                   ),
                   ListTile(
-                    // leading: Icon(
-                    //   Icons.mobile_friendly_sharp,
-                    //   color: Vx.blue900,
-                    //   size: 28,
-                    // ),
                     title: "Dark Mode".text.size(18).make(),
                     trailing: Switch(
-                      value: false,
-                      onChanged: (changedTheme) {},
+                      value: isSwitched,
+                      onChanged: (val) {
+                        toggleTheme();
+                        setState(() {
+                          isSwitched = val;
+                        });
+                      },
                     ),
                   ),
                   ListTile(
@@ -98,5 +99,12 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ));
+  }
+
+  void toggleTheme() {
+    DynamicTheme.of(context).setBrightness(
+        Theme.of(context).brightness == Brightness.dark
+            ? Brightness.light
+            : Brightness.dark);
   }
 }
