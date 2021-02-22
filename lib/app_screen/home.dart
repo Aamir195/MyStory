@@ -1,12 +1,7 @@
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 // import 'package:dynamic_theme/dynamic_theme.dart';
-
-enum FSBStatus {
-  FSB_OPEN,
-  FSB_CLOSE,
-}
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,7 +9,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -66,12 +60,10 @@ class _HomePageState extends State<HomePage> {
                   ListTile(
                     title: "Dark Mode".text.size(18).make(),
                     trailing: Switch(
-                      value: isSwitched,
+                      value: false,
                       onChanged: (val) {
-                        toggleTheme();
-                        setState(() {
-                          isSwitched = val;
-                        });
+                        Get.changeThemeMode(
+                            Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
                       },
                     ),
                   ),
@@ -99,12 +91,5 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ));
-  }
-
-  void toggleTheme() {
-    DynamicTheme.of(context).setBrightness(
-        Theme.of(context).brightness == Brightness.dark
-            ? Brightness.light
-            : Brightness.dark);
   }
 }
