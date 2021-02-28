@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
 import 'package:practise/app_screen/home.dart';
 import 'package:practise/app_screen/onbording/componets/theme.dart';
-
+import 'package:practise/app_screen/spalsh%20screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'app_screen/onbording/screen_one.dart';
 import 'package:flutter/services.dart';
-
 
 int initScreen;
 
@@ -30,7 +28,7 @@ class MyApp extends StatelessWidget {
     {
       return GetMaterialApp(
           title: "My Story",
-          home: OnboardingScreenOne(),
+          home: SpalshScreen(),
           debugShowCheckedModeBanner: false,
           theme: Themes().lightTheme,
           darkTheme: Themes().darktheme,

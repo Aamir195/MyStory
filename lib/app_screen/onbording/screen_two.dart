@@ -114,7 +114,7 @@ class OnboardingScreenTwo extends StatelessWidget {
                 children: [
                   Container(
                     alignment: Alignment.centerRight,
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(

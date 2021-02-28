@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:practise/app_screen/home.dart';
+// import 'package:practise/app_screen/home.dart';
+import 'package:practise/app_screen/onbording/screen_one.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
@@ -30,7 +31,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
             // width: MediaQuery.of(context).size.width * 20,
             // height: MediaQuery.of(context).size.height * 50,
           ),
-          nextScreen: HomePage(),
+          nextScreen: OnboardingScreenOne(),
           splashTransition: SplashTransition.fadeTransition,
           duration: 4000,
           backgroundColor: Vx.red400,
