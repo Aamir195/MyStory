@@ -38,39 +38,39 @@ class Welcome1 {
 
 //Start of akbar-birbal stories//
 
+List<Welcome2> welcome2FromJson(String str) =>
+    List<Welcome2>.from(json.decode(str).map((x) => Welcome2.fromJson(x)));
 
-List<Welcome2> welcome2FromJson(String str) => List<Welcome2>.from(json.decode(str).map((x) => Welcome2.fromJson(x)));
-
-String welcome2ToJson(List<Welcome2> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String welcome2ToJson(List<Welcome2> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Welcome2 {
-    Welcome2({
-        this.id,
-        this.title,
-        this.story,
-        this.moral,
-    });
+  Welcome2({
+    this.id,
+    this.title,
+    this.story,
+    this.moral,
+  });
 
-    String id;
-    String title;
-    String story;
-    String moral;
+  String id;
+  String title;
+  String story;
+  String moral;
 
-    factory Welcome2.fromJson(Map<String, dynamic> json) => Welcome2(
+  factory Welcome2.fromJson(Map<String, dynamic> json) => Welcome2(
         id: json["id"],
         title: json["title"],
         story: json["story"],
         moral: json["moral"],
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,
         "story": story,
         "moral": moral,
-    };
+      };
 }
-
 
 // end of the Akbar- Birbal stories //
 

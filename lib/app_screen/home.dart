@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           child: Column(
             children: [
+              /// START - MORAL STORIES ////////
               Card(
                 margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                 elevation: 10,
@@ -72,6 +73,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              //// END - MORAL STORIES //////
+
+              /// START - PANCHTANTRA CARD ////////
               Card(
                 margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                 elevation: 10,
@@ -92,7 +96,6 @@ class _HomePageState extends State<HomePage> {
                       Opacity(
                         opacity: 0.5,
                       ),
-                      Ink.image(image: AssetImage("assets/bee.png")),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: InkWell(
@@ -115,6 +118,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
+              /// END -  PANCHTANTRA CARD//
+
+              /// START - AKBAR- BIRBAL CARD//////
               Card(
                 margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                 elevation: 10,
@@ -157,6 +164,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
+              /// END - AKBAR-BIRBAL CARD//
+              //  START - TENALI RAM CARD//
               Card(
                 margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                 elevation: 10,
@@ -181,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.all(10.0),
                         child: InkWell(
                           onTap: () {
-                            Get.to(PanchtarntaList());
+                            Get.to(TenaliList());
                           },
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
